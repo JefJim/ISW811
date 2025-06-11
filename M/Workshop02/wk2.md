@@ -1,7 +1,6 @@
 # Workshop02 - LAMP on Debian
 
-
-## Pasos realizados
+## Pasos realizados en clases 
 
 Vimos un resumen de LAMP presentada por el profe Misael al incio de clases y de elementos que intervienen en la publicación de una web y arrancando la VM _Debian/Bookworm_.
 
@@ -56,11 +55,39 @@ Ahora vamos a cambiar el nombre host una vez conectados en a la VM, aplicando lo
 ```bash
 sudo hostnamectl set-hostname webserver
 sudo nano /etc/hosts
+
 ```
 
 ![Imagen nano editando hosts](./images/prueba3.png "cambio de nombre")
 
-## Comandos utilizados
+
+## Instalando paqueteria
+
+Instalando paqueteria necesaria para el webserver dentro de la máquina virtual
+
+
+```bash
+sudo apt-get install apache2 mariadb-server mariadb-client vim vim-nox curl php8.2 php8.2-curl php8.2-bcmath php8.2-mysql php8.2-mcrypt php8.2-xml php8.2-zip php8.2-mbstring
+```
+
+## Más pasos generales hechos en clases
+
+Abrimos un navegador web y buscamos "http://192.168.56.10" y de esta manera logramos ver el servidor en esta ip
+
+![Imagen del webserver](./images/prueba4.png "Webserver abierto")
+
+Luego en la máquina principal vamos a c/Windows/System32/drivers/etc y luego ejecutamos
+
+```bash
+notepad hosts 
+```
+
+Este nos abre un bloc de notas para editar y debemos agregar unos nombres de rutas para acceder mediante este dns
+
+![Imagen de las rutas](./images/prueba5.png "Añadiendo nombres")
+
+
+## Comandos utilizados en toda la clase
 
 ### Comandos básicos de terminal
 - `cd`: Nos permite navegar entre directorios
@@ -71,6 +98,7 @@ sudo nano /etc/hosts
 - `touch`: Crea un archivo vacío
 - `code`: Para abrir Visual Studio Code
 - `tar cvfz "nombreFinalArchivo" "CarpetaAComprimir"`: Este comando se utiliza para comprimir archivos 
+- `notepad`: Para abrir el archivo a editar
 
 ### Comandos Vagrant
 - `vagrant init`: Inicializa el entorno Vagrant
@@ -86,12 +114,3 @@ sudo nano /etc/hosts
 - `sudo`: Ejectutar comandos con previlegios de super usuario
 - `apt-get update`: Actualizar paquetes del sistema
 - `apt-get install`: Instalar paquetes
-
-## Detalles de implementación
-
-### Configuración inicial
-```bash
-vagrant init debian/bookworm64
-# code Vagrantfile
-# Descomentar línea 35 del archivo y configurar IP privada y utilizar la 192.168.56.10
-# config.vm.network "private_network", ip: "192.168.56.10"
