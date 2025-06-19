@@ -1,1 +1,1 @@
-{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/jefry/OneDrive/Documentos/ISW811/VMs/webserver","disabled":false,"__vagrantfile":true}}}
+{"virtualbox":{"/vagrant/sites":{"owner":"www-data","group":"www-data","guestpath":"/vagrant/sites","hostpath":"C:/Users/jefry/OneDrive/Documentos/ISW811/VMs/webserver/sites","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/jefry/OneDrive/Documentos/ISW811/VMs/webserver","disabled":false,"__vagrantfile":true}}}
